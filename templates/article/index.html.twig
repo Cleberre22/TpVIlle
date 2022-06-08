@@ -24,6 +24,7 @@
                 <td>{{ article.img }}</td>
                 <td>{{ article.content }}</td>
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td><img src="{{ asset('uploads/photos/' ~ article.img) }}" width="100"></td>
                 <td>
                     <a href="{{ path('app_article_show', {'id': article.id}) }}">show</a>
                     <a href="{{ path('app_article_edit', {'id': article.id}) }}">edit</a>
