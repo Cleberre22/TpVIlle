@@ -27,7 +27,7 @@
                 <td>{{ contact.firstname }}</td>
                 <td>{{ contact.adress }}</td>
                 <td>{{ contact.phone }}</td>
-                <td>{{ contact.message }}</td>
+                <td>{{contact.message|u.truncate(30, '...', false)}}</td>
                 <td>
                     <a href="{{ path('app_contact_show', {'id': contact.id}) }}">show</a>
                     <a href="{{ path('app_contact_edit', {'id': contact.id}) }}">edit</a>
