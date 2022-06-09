@@ -9,10 +9,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-#[Route('/admin', name: 'admin_')]
 class AdminController extends AbstractController
 {
-    #[Route('/', name: 'index')]
+    #[Route('/admin', name: 'app_admin')]
     public function index(ArticleRepository $articleRepository, SocialNetworkRepository $socialNetworkRepository, ContactRepository $contactRepository): Response
     {
         return $this->render('admin/index.html.twig', [
@@ -20,14 +19,6 @@ class AdminController extends AbstractController
             'social_networks' => $socialNetworkRepository->findBy([],['id'=>'DESC'],3),
             'contacts' => $contactRepository->findBy([],['id'=>'DESC'],3),
             'article' => $articleRepository->findBy([],['id'=>'DESC'],3)
-        ]);
-    }
-
-
-    #[Route('/', name: 'contact')]
-    public function contact(ContactRepository $contactRepository){
-        return $this->render("admin/contact.html.twig", [
-            'contacts' => $contactRepository->findAll()
         ]);
     }
 }

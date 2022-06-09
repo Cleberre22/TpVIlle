@@ -16,6 +16,7 @@
 						<table class="table table-light table-hover text-center align-middle">
 							<thead>
 								<tr>
+									<th scope="col">Image</th>
 									<th scope="col">Titre</th>
 									<th scope="col">Auteur</th>
 									<th scope="col">Date</th>
@@ -24,8 +25,9 @@
 							<tbody>
 								{% for article in article %}
 									<tr>
+										<td><img src="{{ asset('uploads/photos/' ~ article.img) }}" width="100"></td>
 										<td>{{article.title|u.truncate(30, '...', false)}}</td>
-										<td>{{article.lastname}}</td>
+										<td>{{article.user.lastname}}</td>
 										<td>{{article.createdAt|date('d/m/Y')}}</td>
 									</tr>
 								{% endfor %}
@@ -45,7 +47,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								{% for article in article %}
+								{% for social_network in social_networks %}
 									<tr>
 										<td>{{social_network.name}}</td>
 										<td>{{social_network.link|u.truncate(30, '...', false)}}</td>
@@ -69,9 +71,9 @@
 								</tr>
 							</thead>
 							<tbody>
-								{% for article in article %}
+								{% for contact in contacts %}
 									<tr>
-										<td>{{contact.lastname}}</td>
+										<td>{{contact.users.lastname}}</td>
 										<td>{{contact.firstname}}</td>
 										<td>{{contact.email}}</td>
 										<td>{{contact.message|u.truncate(30, '...', false)}}</td>

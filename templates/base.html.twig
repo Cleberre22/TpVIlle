@@ -6,6 +6,9 @@
 			{% block title %}Welcome!
 			{% endblock %}
 		</title>
+		    <!-- FONTS -->
+			<link rel="preconnect" href="https://fonts.gstatic.com">
+			<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;900&display=swap" rel="stylesheet">
 		<!--ICONS-->
 		   <script src="https://kit.fontawesome.com/3c26004a01.js" crossorigin="anonymous"></script>
 		<!-- CSS only -->
@@ -16,43 +19,41 @@
 
 	<body>
 		<header>
-			<nav class="navbar navbar-expand navbar-dark bg-dark" aria-label="Second navbar example">
-				<div class="container-fluid">
-					<a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-					</button>
-
-					<div class="collapse navbar-collapse" id="navbarsExample02">
-						<ul class="navbar-nav me-auto">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Eighth navbar example">
+				<div class="container">
+				  <a class="navbar-brand" href="{{ path('home') }}">Accueil</a>
+				  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarsExample07">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					  <li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{{ path('app_article_index') }}">Article</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{{ path('app_social_network_index') }}">Social</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="{{ path('app_contact_index') }}">Contact</a>
+					</li>
+					  {% if is_granted("ROLE_ADMIN") %}
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="{{ path('app_article_index') }}">Article</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="{{ path('app_social_network_index') }}">Social</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="{{ path('app_contact_index') }}">Contact</a>
-							</li>
-							{% if is_granted("ROLE_ADMIN") %}
-							<li class="nav-item">
-								<a class="nav-link" href="{{ path('admin_index') }}">Administration</a>
+								<a class="nav-link" href="{{ path('app_admin') }}">Administration</a>
 							</li>
 							{% endif %}
-						</ul>
-				
-				<li class="item-nav connexion-petit-ecran">
-					{% if app.user %}
-					<a href="{{ path('app_logout') }}">Déconnexion</a>
-					{% else %}
-					<a href="{{ path('app_login') }}">Connexion</a>
-					{% endif %}
-				</li>
-					</div>
+					</ul>
+					<span class="navbar-text">
+						{% if app.user %}
+						<a class="nav-link active" aria-current="page"  href="{{ path('app_logout') }}">Déconnexion</a>
+						{% else %}
+						<a class="nav-link active" aria-current="page" href="{{ path('app_login') }}">Connexion</a>
+						{% endif %}
+					</span>
+				  </div>
 				</div>
-			</nav>
+			  </nav>
+		</header>
 			{% block body %}{% endblock %}
-
 
 			<div class="container">
 				<footer class="py-3 my-4">

@@ -21,7 +21,7 @@
             </tr>
             <tr>
                 <th>Content</th>
-                <td>{{ article.content }}</td>
+                <td>{{ article.content|u.truncate(50, '...', false)}}</td>
             </tr>
             <tr>
                 <th>CreatedAt</th>

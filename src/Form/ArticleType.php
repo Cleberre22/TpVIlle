@@ -15,6 +15,7 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('title')
+            ->add('content')
             ->add('img', FileType::class, [
                 'label' => 'Photo',
                 'mapped' => false,
@@ -30,7 +31,6 @@ class ArticleType extends AbstractType
                     ])
                 ],
             ])
-            ->add('content')
         ;
     }
 
