@@ -22,4 +22,12 @@ class AdminController extends AbstractController
             'article' => $articleRepository->findBy([],['id'=>'DESC'],3)
         ]);
     }
+
+
+    #[Route('/', name: 'contact')]
+    public function contact(ContactRepository $contactRepository){
+        return $this->render("admin/contact.html.twig", [
+            'contacts' => $contactRepository->findAll()
+        ]);
+    }
 }
