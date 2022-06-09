@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Acceuil Administration
+{% endblock %}
+
+{% block body %}
+
+	<div class="container py-5 mb-5">
+		<div class="cardAdmin">
+			<div class="container py-5">
+				<h1 class="mb-3 text-center titleDashboard">Accueil Administration</h1>
+				<div class="row d-flex justify-content-center">
+
+					<div class="col-lg-8 mb-5">
+						<h3 class="mb-3">Dernier articles ajouté :</h3>
+						<table class="table table-light table-hover text-center align-middle">
+							<thead>
+								<tr>
+									<th scope="col">Titre</th>
+									<th scope="col">Auteur</th>
+									<th scope="col">Date</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for article in article %}
+									<tr>
+										<td>{{article.title|u.truncate(30, '...', false)}}</td>
+										<td>{{article.lastname}}</td>
+										<td>{{article.createdAt|date('d/m/Y')}}</td>
+									</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+						<a href="{{ path("app_article_index") }}" class="btn btn-primary">Gérer les articles</a>
+					</div>
+
+					
+					
+		
+
+				
+
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
