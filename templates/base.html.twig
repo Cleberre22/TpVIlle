@@ -34,15 +34,13 @@
 							<li class="nav-item">
 								<a class="nav-link active" aria-current="page" href="{{ path('app_contact_index') }}">Contact</a>
 							</li>
+							{% if is_granted("ROLE_ADMIN") %}
 							<li class="nav-item">
-								<a class="nav-link" href="{{ path('app_admin') }}">Administration</a>
+								<a class="nav-link" href="{{ path('admin_index') }}">Administration</a>
 							</li>
+							{% endif %}
 						</ul>
-						{% if is_granted("ROLE_ADMIN") %}
-			    <li class="item-nav">
-					<a href="{{ path('admin_home') }}">admin</a>
-				</li>
-				{% endif %}
+				
 				<li class="item-nav connexion-petit-ecran">
 					{% if app.user %}
 					<a href="{{ path('app_logout') }}">Déconnexion</a>
