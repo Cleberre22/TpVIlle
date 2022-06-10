@@ -7,4 +7,12 @@
   margin: 0;
   padding: 0;
 }
+
+html h1 {
+  color: red;
+}
+
+html i {
+  color: red;
+}
 /*# sourceMappingURL=style.css.map */
