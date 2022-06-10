@@ -8,12 +8,26 @@
   padding: 0;
 }
 
-html {
-  h1 {
-    color: red;
+body {
+  background-color: #f1f1f1;
+  font-family: "Roboto Condensed", sans-serif;
+  h1, h2, h3, h4, h5, h6 {
+    
+    font-family: "Orbitron", sans-serif;
   }
 
-  i {
-    color: red;
+  h1 {
+    font-weight: 900;
+  }
+
+
+
+  .titleAdmin {
+    margin-bottom: 80px;
+  }
+
+  .cardArticle {
+    border-radius: 10px;
+    background-color: rgba(51, 51, 51, 0.541);
   }
 }
