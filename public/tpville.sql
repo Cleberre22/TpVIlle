@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 09 juin 2022 à 20:16
+-- Généré le : ven. 10 juin 2022 à 14:23
 -- Version du serveur : 5.7.31
 -- Version de PHP : 8.1.6
 
@@ -65,7 +65,15 @@ CREATE TABLE IF NOT EXISTS `contact` (
   `phone` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `contact`
+--
+
+INSERT INTO `contact` (`id`, `email`, `lastname`, `firstname`, `adress`, `phone`, `message`) VALUES
+(1, 'c.leberre@hotmail.fr', 'Le Berre', 'Charley', '7 rue yvonne choquet-bruhat, 44570 Trignac', '+33632239684', 'test'),
+(2, 'c.leberre@hotmail.fr', 'Le Berre', 'Charley', '7 rue yvonne choquet-bruhat, 44570 Trignac', '632239684', 'srhj tej');
 
 -- --------------------------------------------------------
 
@@ -123,7 +131,14 @@ CREATE TABLE IF NOT EXISTS `social_network` (
   `link` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `social_network`
+--
+
+INSERT INTO `social_network` (`id`, `name`, `link`, `img`) VALUES
+(1, 'Facebook', 'https://fr-fr.facebook.com/saintnazaire.officiel/', '<i class=\"fab fa-facebook\"></i>');
 
 -- --------------------------------------------------------
 
